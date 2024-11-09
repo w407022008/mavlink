@@ -2149,7 +2149,7 @@
 
           When used in a mission, an autopilot should execute the MAV_CMD for a specified local camera (param1 = 1-6), or resend it as a command if it is intended for a MAVLink camera (param1 = 7 - 255), setting the command's target_component as the param1 value (and setting param1 in the command to zero).
           If the param1 is 0 the autopilot should do both.
-          
+
           When sent in a command the target MAVLink address is set using target_component.
           If addressed specifically to an autopilot: param1 should be used in the same way as it is for missions (though command should NACK with MAV_RESULT_DENIED if a specified local camera does not exist).
           If addressed to a MAVLink camera, param 1 can be used to address all cameras (0), or to separately address 1 to 7 individual sensors. Other values should be NACKed with MAV_RESULT_DENIED.
@@ -2165,7 +2165,7 @@
       </entry>
       <entry value="2001" name="MAV_CMD_IMAGE_STOP_CAPTURE" hasLocation="false" isDestination="false">
         <description>Stop image capture sequence.
-        
+
           Param1 (id) may be used to specify the target camera: 0: all cameras, 1 to 6: autopilot-connected cameras, 7-255: MAVLink camera component ID.
           It is needed in order to target specific cameras connected to the autopilot, or specific sensors in a multi-sensor camera (neither of which have a distinct MAVLink component ID).
           It is also needed to specify the target camera in missions.
@@ -3997,6 +3997,9 @@
       </entry>
       <entry value="4" name="ATTITUDE_TARGET_TYPEMASK_BODY_YAW_RATE_IGNORE">
         <description>Ignore body yaw rate</description>
+      </entry>
+      <entry value="8" name="ATTITUDE_TARGET_TYPEMASK_USE_HOVER_THRUST_EST">
+        <description>Ignore hover thrust estimation</description>
       </entry>
       <entry value="32" name="ATTITUDE_TARGET_TYPEMASK_THRUST_BODY_SET">
         <description>Use 3D body thrust setpoint instead of throttle</description>
